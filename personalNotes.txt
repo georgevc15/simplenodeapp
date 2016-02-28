@@ -1,0 +1,9 @@
+- in test mode we cand start the app like this(before instaling the supertest library): ./bin/www.js instead of node app but we use node test.js
+- the libary nedeed for running test is npm supertest -save-dev we use -dev because is not going to be used for production only in development mode
+
+-call mocha
+./node_modules/mocha/bin/mocha test.js
+or
+npm test (but scripts from package.json needs to be modified)
+
+-npm install supertest-g instals a package locally(it makes it available from the command line)
