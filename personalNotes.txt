@@ -7,3 +7,26 @@ or
 npm test (but scripts from package.json needs to be modified)
 
 -npm install supertest-g instals a package locally(it makes it available from the command line)
+
+./node_modules/mocha/bin/mocha --help
+
+./node_modules/mocha/bin/mocha -w app.js test.js (watch the app for constant changing)
+
+curl -I http://localhost:3000/cities simulates a request
+curl -i http://localhost:3000/cities simulates a request
+
+
+In order to run the test
+1)npm test.js
+2)./node_modules/mocha/bin/mocha -w app.js test.js (add a watcher)
+3)./bin/www.js - fire the app in test mode
+
+
+--------------------------------
+Make the app available for production
+1) heroku create
+ https://mysterious-shelf-68525.herokuapp.com
+2) check git for the app
+ git remote -v
+3) push the app online
+ git push heroku master
