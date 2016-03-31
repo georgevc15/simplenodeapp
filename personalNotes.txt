@@ -16,13 +16,18 @@ curl -I http://localhost:3000/cities simulates a request
 curl -i http://localhost:3000/cities simulates a request
 
 
-In order to run the test
+In order to run the app
 1)npm test.js
-2)./node_modules/mocha/bin/mocha -w app.js test.js (add a watcher)
+
+2) 
+  v1:  ./node_modules/mocha/bin/mocha -w app.js test.js (add a watcher)
+  v2: NODE_ENV=test ./node_modules/mocha/bin/mocha -w app.js test.js //specificam sa foloseasca baza de date de test
+ 
+
 3)./bin/www.js - fire the app in test mode
 
 
---------------------------------
+-------------------------------- heroku  ----------------------
 Make the app available for production
 1) heroku create
  https://mysterious-shelf-68525.herokuapp.com
@@ -31,8 +36,23 @@ Make the app available for production
 3) push the app online
  git push heroku master
 
+- am facut setare env pentru heroku sa foloseasca production
+heroku config:add NODE_ENV=production
+
+
+-------------------------------- Packages
 
 - This package is needed for expreess to be able to read data sent from outside (it acts as a middleware)
  npm install body-parser --save  
-  **after installing any module we have to run npm shrinkwrap in case we are not deploying mode_module to production/git 
+  **after installing any module we have to run -> npm shrinkwrap <- in case we are not deploying mode_module to production/git 
   -> run git diff npm-shrinkwrap.json to see differences
+-- This is package is nedded for working with reddis (database)
+npm install redis --save
+ - we need to install redis for herouku (redistogo)
+   -> heroku addons:create redistogo:nano (varianta free)
+
+---------------------------- git
+gid add .
+git status
+git commit -m 'Name of the commit'
+git diff npm-shrinkwrap.json (see all fiferences within a file)
