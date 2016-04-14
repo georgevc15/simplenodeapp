@@ -55,10 +55,6 @@ describe('Listing cities on /cities', function() {
 
 describe('Creationg new cities', function() {
 	
-	before(function() {
-		
-	});
-	
 	it('Returns a 201 status code', function(done) {
 		
 		request(app)
@@ -73,6 +69,16 @@ describe('Creationg new cities', function() {
 		 .post('/cities')
 		 .send('name=Springfield&description=where+the+simposns+live')
 		 .expect(/springfield/i, done);
+		
+	});
+	
+	
+	it('Validates city name and description', function(done) {
+		
+		request(app)
+		  .post('/cities')
+		  .send('name=&description=')
+		  .expect(400, done);
 		
 	});
 	

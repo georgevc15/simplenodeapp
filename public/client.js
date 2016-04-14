@@ -10,7 +10,11 @@ $(function(){
 
     $.ajax({
       type: 'POST', url: '/cities', data: blockData
-    }).done(function(blockName){
+    })
+	.error(function() {
+		$('.alert').show();
+	})
+	.success(function(blockName){
       appendToList([blockName]);
       form.trigger('reset');
     });
