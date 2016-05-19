@@ -51,6 +51,7 @@ heroku config:add NODE_ENV=production
 npm install redis --save
  - we need to install redis for herouku (redistogo)
    -> heroku addons:create redistogo:nano (varianta free)
+-npm install ejs --save (pentru html) dupa care dai npm shrinkwrap 
 
 ---------------------------- git
 gid add .
