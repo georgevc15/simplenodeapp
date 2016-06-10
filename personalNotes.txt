@@ -41,6 +41,9 @@ heroku config:add NODE_ENV=production
 
 4) heroku open (opens the app)
    heroku logs --tail (if a I get an error) 
+
+-app live: https://mysterious-shelf-68525.herokuapp.com/
+
 -------------------------------- Packages
 
 - This package is needed for expreess to be able to read data sent from outside (it acts as a middleware)
@@ -60,3 +63,8 @@ git commit -m 'Name of the commit'
 git diff npm-shrinkwrap.json (see all fiferences within a file)
 
 git push heroku master
+
+---------------------------- git hub
+git init (creaza o instanta locala a repositoriului)
+ls (listeaza constinutul directoarelor)
+git add .
